@@ -10,7 +10,7 @@ function getAuthCode()
 	var params = location.search.split("&");
 	var authCodeString = params[0];
 	var authCode = authCodeString.split("=");
-	console.log(authCode);
+	console.log(authCode[1]);
 }
 
 function getProfile()
