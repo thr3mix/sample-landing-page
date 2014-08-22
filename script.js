@@ -27,7 +27,7 @@ function setFuckingText(index)
 	
 }
 
-function loadText()
+/*function loadText()
 {
 	var index = gup("p");
 	
@@ -47,7 +47,7 @@ function loadText()
 			changeFuckingText();
 		}
 	}
-}
+}*/
 
 function changeFuckingText()
 {
