@@ -37,6 +37,14 @@
     api_key: 75xudtkb6ks3aw
     onLoad: OnLinkedInFrameworkLoad
     authorize: true
+    
+    function OnLinkedInFrameworkLoad() {
+        IN.Event.on(IN, "auth", OnLinkedInAuth);
+    }
+
+    function OnLinkedInAuth() {
+        IN.API.Profile("me").result(ShowProfileData);
+    }
     </script>
 
 
