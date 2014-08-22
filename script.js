@@ -12,7 +12,7 @@ function reqAccessToken()
 	var authCode = authCodeString.split("=");
 	console.log(authCode[1]);
 	
-	window.location.href = "https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code&code=" + authCode[1] + "&redirect_uri=http://thr3mix.github.io/sample-landing-page/authorized_user&client_id=75xudtkb6ks3aw&client_secret=SKybWS55LKRA0GVp"
+	window.open("https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code&code=" + authCode[1] + "&redirect_uri=http://thr3mix.github.io/sample-landing-page/authorized_user&client_id=75xudtkb6ks3aw&client_secret=SKybWS55LKRA0GVp", "_blank");
 	
 	
 }
