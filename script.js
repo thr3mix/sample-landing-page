@@ -13,24 +13,30 @@ function connectLinkedInUser()
 	+"&scope=r_basicprofile%20r_fullprofile%20r_emailaddress%20r_network%20rw_groups"
 	+"&state=" + state
 	+"&redirect_uri=" + redirect;
-	
+	//authorizes user sign in, next page URL receives authorization code
 }
 
+//runs this function after auth page load ^
+//must use authorization code from URL parameter to retrieve user token
 function reqAccessToken()
 {
+	//parsing URL params
 	var params = location.search.split("&");
 	var authCodeString = params[0];
 	var authCodeS = authCodeString.split("=");
 	
+	//saves authorization code to global variable
 	authCode = authCodeS[1];
 	console.log(authCode);
 	
+	// opens a new window of token and time
 	window.open("https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code"
 	+"&code=" + authCode 
 	+"&redirect_uri=" + redirect
 	+"&client_id=" + apiKey
 	+"&client_secret=" + secretKey);
 	
+	//attempt to get token and time data in json in order to save to global var
 	$.getJSON("https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code"
 	+"&code=" + authCode 
 	+"&redirect_uri=" + redirect
