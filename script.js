@@ -7,7 +7,7 @@ function connectLinkedInUser()
 
 function getAuthCode()
 {
-	var params = location.search;
+	var params = location.search.split("&");
 	console.log(params);
 }
 
