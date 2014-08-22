@@ -12,12 +12,12 @@ function reqAccessToken()
 	var authCode = authCodeString.split("=");
 	console.log(authCode[1]);
 	
+	$.getJSON("https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code&code=" + authCode[1] + "&redirect_uri=http://thr3mix.github.io/sample-landing-page/authorized_user&client_id=75xudtkb6ks3aw&client_secret=SKybWS55LKRA0GVp", function(data) {
+    		console.log(data);
+	});
 	
-	var xhr = new XMLHttpRequest();
-	xhr.open("GET", "https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code&code=" + authCode[1] + "&redirect_uri=http://thr3mix.github.io/sample-landing-page/authorized_user&client_id=75xudtkb6ks3aw&client_secret=SKybWS55LKRA0GVp", false);
-	xhr.send();
-	console.log(xhr.status);
-	console.log(xhr.responseText);
+	
+
 
 	
 	
