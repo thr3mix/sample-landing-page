@@ -32,12 +32,6 @@ function reqAccessToken()
 	+"&client_secret=" + secretKey, function(data) {
     		console.log(data);
 	});
-	
-	
-
-
-	
-	
 }
 
 function getProfile()
