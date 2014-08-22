@@ -9,7 +9,8 @@ function connectLinkedInUser()
 	window.location.href = "https://www.linkedin.com/uas/oauth2/authorization?response_type=code"
 	+"&client_id=" + apiKey
 	+"&scope=r_basicprofile%20r_fullprofile%20r_emailaddress%20r_network%20rw_groups"
-	+"&state=DCEEFWF45453sdffef424&redirect_uri=http://thr3mix.github.io/sample-landing-page/authorized_user";
+	+"&state=DCEEFWF45453sdffef424"
+	+"&redirect_uri=http://thr3mix.github.io/sample-landing-page/authorized_user";
 	
 }
 
@@ -22,7 +23,7 @@ function reqAccessToken()
 	authCode = authCodeS[1];
 	console.log(authCode);
 	
-	$.getJSON("https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code&code=" + authCode 
+	$.getJSON("https://linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code&code=" + authCode 
 	+"&redirect_uri=http://thr3mix.github.io/sample-landing-page/authorized_user"
 	+"&client_id=" + apiKey
 	+"&client_secret=" + client_secret, function(data) {
