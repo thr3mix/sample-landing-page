@@ -8,7 +8,9 @@ function connectLinkedInUser()
 function getAuthCode()
 {
 	var params = location.search.split("&");
-	console.log(params);
+	var authCodeString = params[0];
+	var authCode = authCodeString.split("=");
+	console.log(authCode);
 }
 
 function getProfile()
