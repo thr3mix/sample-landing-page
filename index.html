@@ -32,24 +32,6 @@
     <!--attaches script file functions-->
     <script src="script.js"></script>
 
-    <!--attaches hello API login library-->
-    <script src="hello.js"></script>
-    
-
-    <script>
-    hello.on('auth.login', function(auth){
-    
-    // call user information, for the given network
-    hello( auth.network ).api( '/me' ).success(function(r){
-        var $target = $("#profile_"+ auth.network );
-        if($target.length==0){
-            $target = $("<div id='profile_"+auth.network+"'></div>").appendTo("#profile");
-        }
-        $target.html('<img src="'+ r.thumbnail +'" /> Hey '+r.name).attr('title', r.name + " on "+ auth.network);
-        });
-    });
-    </script>
-
 
 </head>
 
@@ -100,7 +82,7 @@
 
 
                     <!-- test social network login API-->
-                    <button onclick="location.href ='https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=75xudtkb6ks3aw&state=DCEEFWF45453sdffef424&redirect_uri=http://thr3mix.github.io/sample-landing-page/';" id="linkedinButton"> 
+                    <button onclick= 'connectLinkedInUser()'> 
                         LinkedIn</button>
 
 

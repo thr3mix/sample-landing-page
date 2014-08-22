@@ -1,5 +1,6 @@
 
 
+
 function setFuckingText(index)
 {
 	var fucking_text = new Array();
@@ -24,6 +25,18 @@ function setFuckingText(index)
 
 	
 	
+	
+}
+
+
+function connectLinkedInUser()
+{
+
+	window.location.href = "https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=75xudtkb6ks3aw&scope=r_basicprofile%20r_fullprofile%20r_emailaddress%20r_network%20rw_groups&state=DCEEFWF45453sdffef424&redirect_uri=http://thr3mix.github.io/sample-landing-page/";
+}
+
+function getProfile()
+{
 	
 }
 
