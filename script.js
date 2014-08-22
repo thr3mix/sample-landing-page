@@ -1,4 +1,7 @@
 var apiKey = "75xudtkb6ks3aw";
+var authCode;
+var client_secret = "SKybWS55LKRA0GVp";
+var user_token;
 
 function connectLinkedInUser()
 {
@@ -14,13 +17,15 @@ function reqAccessToken()
 {
 	var params = location.search.split("&");
 	var authCodeString = params[0];
-	var authCode = authCodeString.split("=");
-	console.log(authCode[1]);
+	var authCodeS = authCodeString.split("=");
 	
-	$.getJSON("https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code&code="+authCode[1] 
+	authCode = authCodeS[1];
+	console.log(authCode);
+	
+	$.getJSON("https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code&code=" + authCode 
 	+"&redirect_uri=http://thr3mix.github.io/sample-landing-page/authorized_user"
 	+"&client_id=" + apiKey
-	+"&client_secret=SKybWS55LKRA0GVp", function(data) {
+	+"&client_secret=" + client_secret, function(data) {
     		console.log(data);
 	});
 	
