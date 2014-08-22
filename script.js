@@ -1,7 +1,12 @@
+var apiKey = "75xudtkb6ks3aw";
+
 function connectLinkedInUser()
 {
 
-	window.location.href = "https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=75xudtkb6ks3aw&scope=r_basicprofile%20r_fullprofile%20r_emailaddress%20r_network%20rw_groups&state=DCEEFWF45453sdffef424&redirect_uri=http://thr3mix.github.io/sample-landing-page/authorized_user";
+	window.location.href = "https://www.linkedin.com/uas/oauth2/authorization?response_type=code"
+	+"&client_id=" + apiKey
+	+"&scope=r_basicprofile%20r_fullprofile%20r_emailaddress%20r_network%20rw_groups"
+	+"&state=DCEEFWF45453sdffef424&redirect_uri=http://thr3mix.github.io/sample-landing-page/authorized_user";
 	
 }
 
@@ -12,7 +17,10 @@ function reqAccessToken()
 	var authCode = authCodeString.split("=");
 	console.log(authCode[1]);
 	
-	$.getJSON("https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code&code=" + authCode[1] + "&redirect_uri=http://thr3mix.github.io/sample-landing-page/authorized_user&client_id=75xudtkb6ks3aw&client_secret=SKybWS55LKRA0GVp", function(data) {
+	$.getJSON("https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code&code="+authCode[1] 
+	+"&redirect_uri=http://thr3mix.github.io/sample-landing-page/authorized_user"
+	+"&client_id=" + apiKey
+	+"&client_secret=SKybWS55LKRA0GVp", function(data) {
     		console.log(data);
 	});
 	
