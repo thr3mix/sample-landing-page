@@ -25,6 +25,12 @@ function reqAccessToken()
 	authCode = authCodeS[1];
 	console.log(authCode);
 	
+	window.open("https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code"
+	+"&code=" + authCode 
+	+"&redirect_uri=" + redirect
+	+"&client_id=" + apiKey
+	+"&client_secret=" + secretKey);
+	
 	$.getJSON("https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code"
 	+"&code=" + authCode 
 	+"&redirect_uri=" + redirect
