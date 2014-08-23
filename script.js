@@ -37,13 +37,42 @@ function reqAccessToken()
 	+"&client_secret=" + secretKey);
 	
 	//attempt to get token and time data in json in order to save to global var
-	$.getJSON("https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code"
+	// $.getJSON("https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code"
+// 	+"&code=" + authCode
+// 	+"&redirect_uri=" + redirect
+// 	+"&client_id=" + apiKey
+// 	+"&client_secret=" + secretKey, function(data) {
+//     		console.log(data);
+// 	});
+
+
+	// Using JSONP
+	$.ajax({
+    url: "https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code"
 	+"&code=" + authCode 
 	+"&redirect_uri=" + redirect
 	+"&client_id=" + apiKey
-	+"&client_secret=" + secretKey, function(data) {
-    		console.log(data);
+	+"&client_secret=" + secretKey,
+ 
+    // the name of the callback parameter, as specified by the YQL service
+    jsonp: "callback",
+ 
+    // tell jQuery we're expecting JSONP
+    dataType: "jsonp",
+ 
+    // tell YQL what we want and that we want JSON
+    data: {
+        
+    },
+ 
+    // work with the response
+    success: function( response ) {
+        console.log( response ); // server response
+    }
 	});
+
+
+
 }
 
 function getProfile()
