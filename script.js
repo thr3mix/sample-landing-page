@@ -3,7 +3,7 @@ var apiKey = "75xudtkb6ks3aw";
 var authCode;
 var secretKey = "SKybWS55LKRA0GVp";
 var user_token;
-var redirect = "thr3mix.github.io/sample-landing-page/authorized_user";
+var redirect = "http://thr3mix.github.io/sample-landing-page/authorized_user";
 
 
 
