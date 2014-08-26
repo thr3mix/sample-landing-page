@@ -7,13 +7,13 @@ var redirect = "http://thr3mix.github.io/sample-landing-page/authorized_user";
 
 function connectLinkedInUser()
 {
-
+	//authorizes user sign in, next page URL receives authorization code
 	window.location.href = "https://www.linkedin.com/uas/oauth2/authorization?response_type=code"
 	+"&client_id=" + apiKey
 	+"&scope=r_basicprofile%20r_fullprofile%20r_emailaddress%20r_network%20rw_groups"
 	+"&state=" + state
 	+"&redirect_uri=" + redirect;
-	//authorizes user sign in, next page URL receives authorization code
+	
 }
 
 //runs this function after auth page load ^
@@ -27,7 +27,7 @@ function reqAccessToken()
 	
 	//saves authorization code to global variable
 	authCode = authCodeS[1];
-	console.log(authCode);
+	console.log(authCode); //prints authCode into console
 	
 	// opens a new window of token and time
 	window.open("https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code"
