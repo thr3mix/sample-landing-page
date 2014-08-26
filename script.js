@@ -40,20 +40,14 @@ function reqAccessToken()
 	
 	//attempt to get token and time data in json in order to save to global var
 	(function() {
-	var url_request_token = "https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code"
+  	$.getJSON( "https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code"
 	+"&code=" + authCode 
 	+"&redirect_uri=" + redirect
 	+"&client_id=" + apiKey
-	+"&client_secret=" + secretKey;
-  	$.getJSON( url_request_token, {
-    tags: "user_token",
-    tagmode: "any",
-    format: "json"
-  	})
-  		.done(function( data ) {
-      	console.log(data);
-      });
-    });
+	+"&client_secret=" + secretKey, function(data) {
+		console.log("user_token: " + data[0]);
+	});
+	});
 	//end attempt user token and time in json
 
 }
