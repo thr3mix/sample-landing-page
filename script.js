@@ -31,7 +31,7 @@ function reqAccessToken()
 	
 	//saves authorization code to global variable
 	authCode = authCodeS[1];
-	document.cookie("authorization code=" + authCode);
+	document.cookie = "authorization code=" + authCode;
 	console.log("authorization code: " + authCode); //prints authCode into console
 	
 	// opens a new window of token and time
