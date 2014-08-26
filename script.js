@@ -48,10 +48,7 @@ function reqAccessToken()
       	console.log(data);
       });
     });
-	})();
 	//end attempt user token and time in json
-
-
 
 }
 
