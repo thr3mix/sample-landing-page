@@ -42,7 +42,7 @@ function reqAccessToken()
 	console.log("authorization code: " + authCode); //prints authCode into console
 	
 	// opens a new window of token and time
-	window.open(request_access_token_uri);
+	window.open(request_access_token_uri, "json_window", "menubar=1, resizable=1, width = 350, height = 250");
 	
 	//attempt to get token and time data in json in order to save to global var
   	$.getJSON( request_access_token_uri, function(data) {
