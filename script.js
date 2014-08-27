@@ -4,6 +4,7 @@ var authCode;
 var secretKey = "SKybWS55LKRA0GVp";
 var user_token;
 var redirect = "http://thr3mix.github.io/sample-landing-page/authorized_user";
+var request_access_token_uri;
 
 
 
@@ -31,15 +32,17 @@ function reqAccessToken()
 	
 	//saves authorization code to global variable
 	authCode = authCodeS[1];
-	document.cookie = "authorization code=" + authCode;
-	console.log("authorization code: " + authCode); //prints authCode into console
-	
-	// opens a new window of token and time
-	window.open("https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code"
+
+	request_access_token_uri = "https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code"
 	+"&code=" + authCode 
 	+"&redirect_uri=" + redirect
 	+"&client_id=" + apiKey
-	+"&client_secret=" + secretKey);
+	+"&client_secret=" + secretKey;
+	
+	console.log("authorization code: " + authCode); //prints authCode into console
+	
+	// opens a new window of token and time
+	window.open(request_access_token_uri);
 	
 	//attempt to get token and time data in json in order to save to global var
   	$.getJSON( "https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code"
