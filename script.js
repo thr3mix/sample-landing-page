@@ -45,11 +45,7 @@ function reqAccessToken()
 	window.open(request_access_token_uri);
 	
 	//attempt to get token and time data in json in order to save to global var
-  	$.getJSON( "https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code"
-	+"&code=" + authCode 
-	+"&redirect_uri=" + redirect
-	+"&client_id=" + apiKey
-	+"&client_secret=" + secretKey, function(data) {
+  	$.getJSON( request_access_token_uri, function(data) {
 		console.log("user_token: " + data[0]);
 	});
 	//end attempt user token and time in json
